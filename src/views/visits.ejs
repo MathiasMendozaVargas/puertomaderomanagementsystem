@@ -1,0 +1,51 @@
+<%- include("_header") -%>
+
+<h2 style="margin-bottom: 15px;"><i style="font-size: 30px;" class="fa-solid fa-business-time"></i> Upcoming Visits</h2>
+<h6 style="font-style: italic;"><i class="fa-solid fa-van-shuttle"></i> Total: <%= model.length %></h6>
+<% var total_clients = 0 %>
+<% for(const visits of model) {
+  total_clients = total_clients + Number(visits.People)
+} %>
+<h6 style="margin-bottom: 30px; font-style: italic;"><i class="fa-solid fa-people-group"></i> Number of clients: <%= total_clients %></h6>
+
+
+<div class="table-responsive-sm" style="background-color: rgb(8,20,58) !important; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.548);">
+  <table class="table table-hover" >
+    <thead>
+      <tr>
+        <th>People</th>
+        <th>Area</th>
+        <th>Land</th>
+        <th>Speacial Bus</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Notes (optional)</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/visits/create">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody style="font-style: italic;">
+      <% for (const visits of model) { %>
+        <% const formattedDate = (new Date(visits.Date)).toLocaleDateString(); %>
+        <tr>
+          <td><%= visits.People %></td>
+          <td><%= visits.Area %></td>
+          <td><%= visits.Land %></td>
+          <td><%= visits.Special_bus %></td> 
+          <td><%= formattedDate %></td>
+          <td><%= visits.Time %></td>
+          <td><%= visits.Notes %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm" style="background-color: rgb(19, 48, 141) !important; color: white; margin-bottom: 10px;" href="/visits/edit/<%= visits._id %>">Edit Visit</a>
+            <form action="/visits/delete/<%= visits._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-sm btn-danger" type="submit">Delete Visit</button>
+            </form>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>

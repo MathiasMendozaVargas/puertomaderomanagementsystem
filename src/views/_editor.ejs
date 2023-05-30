@@ -1,0 +1,69 @@
+<!-- people -->
+<div class="form-group" style="display: inline-flex; width: 100%;">
+  <label style="margin-right: 15px;" for="People"><i class="fa-solid fa-people-group"></i> Number of Clients going:</label>
+  <select required name="People" id="People" style="width: 45px; height: 40px; margin-right: 60px; background-color: rgb(11, 27, 80); color: white; border: 1px solid white;">
+    <% for(var i=0; i<20; i++){ %>
+      <% var option = i + 1 %>
+      <option value="<%= option %>"><%= option %></option>
+    <% } %>
+  </select>
+</input>
+
+
+  <div class="form-group row" style="margin-left: 100px;">
+    <!-- area -->
+    <label class="col-form-label" style="margin-right: 10px;" for="Area"><i class="fa-solid fa-chart-area"></i> Area:</label>
+    <div class="">
+      <select required name="Area" id="Area" style="width: 45px; height: 40px; margin-right: 60px; background-color: rgb(11, 27, 80); color: white; border: 1px solid white;">
+        <% for(var i=0; i<100; i++){ %>
+          <% var option = i + 1 %>
+          <option value="<%= option %>"><%= option %></option>
+        <% } %>
+      </select>
+    </div>
+
+    <!-- land -->
+    <label class="col-form-label" style="margin-right: 10px;" for="Land"><i class="fa-solid fa-house"></i> Land:</label>
+    <div class="">
+      <select required name="Land" id="Land" style="width: 45px; height: 40px; margin-right: 60px; background-color: rgb(11, 27, 80); color: white; border: 1px solid white;">
+        <% for(var i=0; i<100; i++){ %>
+          <% var option = i + 1 %>
+          <option value="<%= option %>"><%= option %></option>
+        <% } %>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <!-- Date -->
+  <label class="col-form-label" style="margin-right: 10px;" for="Date"><i class="fa-solid fa-calendar-days"></i> Date:</label>
+  <input type="date" name="Date" value="<%= model.Date %>" style="margin-right: 40px; background-color: rgb(11, 27, 80); color: white; border: 1px solid white;" required>
+
+  <!-- Time -->
+  <label class="col-form-label" style="margin-right: 10px;" for="Time"><i class="fa-solid fa-business-time"></i> Time:</label>
+  <select name='Time' id="Time" style="margin-right: 40px; background-color: rgb(11, 27, 80); color: white; border: 1px solid white;" required>
+    <option value="9:00am">9:00am</option>
+    <option value="11:00am">11:00am</option>
+    <option value="2:00pm">2:00pm</option>
+    <option value="4:00pm">4:00pm</option>
+    <option value="6:00pm">6:00pm</option>
+  </select>
+
+  <!-- Special_bus -->
+  <label class="col-form-label" style="margin-right: 10px;" for="Special_bus"><i class="fa-solid fa-bus"></i> Special Bus required:</label>
+  <select name='Special_bus' id="Special_bus" required aria-selected="<%= model.Special_bus %>" style="background-color: rgb(11, 27, 80); color: white; border: 1px solid white;">
+    <option value="Needed">Yes</option>
+    <option value="Not Needed">No</option>
+  </select>
+  
+  
+</div>
+
+  <!-- Notes -->
+  <div class="form-group row">
+    <label class="col-form-label" style="margin-top: 20px;" for="Notes"><i class="fa-solid fa-comment-dots"></i> Notes: </label>
+    <div class="col-sm-10">
+      <textarea style="margin-top: 20px; background-color: rgb(11, 27, 80); color: white; border: 1px solid white;" class="form-control" cols="20" name="Notes" maxlength="32000" id="Notes" rows="4"><%= model.Notes %></textarea>
+    </div>
+  </div>

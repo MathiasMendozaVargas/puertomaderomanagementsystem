@@ -1,0 +1,18 @@
+<%- include("_header") -%>
+
+<h1 style="margin-bottom: 25px;"><i class="fa-solid fa-van-shuttle"></i> Schedule a Visit</h1>
+
+<form action="/visits/create" method="post">
+  <div class="form-horizontal">
+
+    <%- include("_editor") -%>
+    <div style="margin-top: 35px;" class="row">
+      <div class="col-sm-10">
+        <input style="background-color: rgb(19, 48, 141) !important; color: white; margin-right: 10px;" type="submit" value="Create" class="btn btn-default" />
+        <a class="btn btn-outline-dark" href="/visits/all" style="background-color: gray; color: white;">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+<%- include("_footer") -%>
