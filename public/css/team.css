@@ -1,0 +1,78 @@
+/* *************** */
+/* Team Page Styles */
+/* *************** */
+
+body{
+    background-image: url('/sources/landsBg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    width: 100%;
+    margin: 0px 60px !important;
+}
+
+.team-header{
+    font-size:25px !important ; 
+    text-align : center!important ;
+}
+.team-header h1{
+    font-style: italic;
+    width: fit-content;
+    padding: 8px 12px;
+    margin: auto auto;
+    background-color: rgb(16, 45, 142);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.218);
+    border-radius: 15px;
+}
+
+.team-group{
+    margin-bottom: 55px;
+}
+
+.teams h3{
+    background-color: rgb(238, 238, 238);
+    width: fit-content;
+    color: black;
+    font-size: 25px;
+    padding: 5px 12px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.218);
+    margin-bottom: 25px !important;
+}
+
+.members{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.team-member{
+    width: 230px;
+    display: inline-flex;
+    height: 80px;
+    background-color: rgb(14, 41, 130);
+    border-radius: 50px;
+    color: white;
+    transition: all 0.5s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.338);
+    padding:  20px 2
+}
+
+.team-member:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    background-color: rgb(18, 50, 155);
+}
+
+.team-member img{
+    border-radius: 50px;
+}
+
+.member-info{
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+}

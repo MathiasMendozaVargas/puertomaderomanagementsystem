@@ -1,0 +1,23 @@
+/* Sign up Css */
+body{
+    background-image: url('/sources/landsBg.webp');
+}
+
+.signup{
+    width: 70%;
+    padding-top: 25px;
+    background-color: rgba(18, 18, 18, 0.62);
+}
+
+.signup h2{
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.forms-metadata{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

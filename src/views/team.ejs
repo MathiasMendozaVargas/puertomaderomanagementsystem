@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Puerto Madero Urubó MS</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/team.css"/>
+  <!-- navbar css -->
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+
+</head>
+
+<body class="d-flex flex-column min-vh-100" style="background-color: black; color: white;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 40px !important;">
+      <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
+      <ul class="navbar-nav" style="text-align: right !important;">
+        <li class="nav-item" style="display: inline-flex !important;">
+          <% if(session){ %>
+            <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
+            <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
+            <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
+            <a class="nav-link" href="/users/profile"><i class="fa-sharp fa-solid fa-user"></i> My Profile</a>
+            <a class="nav-link" href="/auth/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+          <% } else{ %>
+            <a class="nav-link" href="/auth/signup"><i class="fa-solid fa-user-plus"></i> Create a new Account</a>
+            <a class="nav-link" href="/auth/login"><i class="fa-solid fa-right-from-bracket"></i> Login</a>
+          <% } %>
+        </li>
+      </ul>
+    </nav>
+    <div class="container" style="width: 100% !important;">
+        <div class="team-header">
+            <h1>Our current Team</h1>
+        </div>
+        <br/>
+        <!---------------------------------------------------------------------->
+        <!-- PAGE ON PRODUCTION, ADDING FUNCTIONALITY AND GIVING FINAL STYLES -->
+        <!---------------------------------------------------------------------->
+        <div class='teams'>
+            <div class="team-group">
+                <h3>Sales Team</h3>
+                <h6><%= users %></h6>
+                <div class="members">
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-group">
+                <h3>Marketing Team</h3>
+                <div class="members">
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-group">
+                <h3>Accounting Team</h3>
+                <div class="members">
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/sources/basedProfile.png">
+                        <div class="member-info">
+                            <p>Cecilia Vargas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include("_footer") -%>

@@ -1,0 +1,19 @@
+/* ******************* */
+/*  NAVBAR STYLESHEET  */
+/* ******************* */
+
+
+.navbar{
+    background-color: rgb(11, 34, 109) !important;
+}
+
+.navbar ul{
+    width: 100%;
+    text-align: right;
+    align-self: center;
+    display: block;
+}
+
+.navbar ul li{
+    display: inline-flex;
+}

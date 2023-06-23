@@ -6,10 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Puerto Madero Urubó MS</title>
   <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/calendar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
+
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
+
+  <!-- Data Aos Effect for Calendar -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: black; color: white;">
+<body class="d-flex flex-column min-vh-100" style="background-color: rgb(29, 29, 29); color: white;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 40px !important;">
       <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
       <ul class="navbar-nav" style="text-align: right !important;">
@@ -27,6 +36,51 @@
         </li>
       </ul>
     </nav>
-    <div class="container" style="width: 100% !important;">
-<h1>Page not Found!!</h1>
+
+    <div id="calendar-container">
+        <div id="header">
+            <div id="monthDisplay"></div>
+            <div id="controlBtns">
+                <button id="backButton"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="nextButton"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div id="weekdays">
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+        </div>
+
+        <div id="calendar"></div>
+    </div>
+
+    <div id="newEventModal">
+        <h2>New Event</h2>
+
+        <input id="eventTitleInput" placeholder="Event Title" />
+
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+        <h2>Event</h2>
+
+        <p id="eventText"></p>
+
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+    </div>
+  
+    <div id="modalBackDrop"></div>
+  
+    <script src="/js/configCalendar.js"></script>
+
+
+
 <%- include("_footer") -%>

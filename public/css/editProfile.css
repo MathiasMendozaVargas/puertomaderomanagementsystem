@@ -1,0 +1,27 @@
+/* Edit Profile Css */
+body{
+    background-image: url('/sources/landsBg.webp');
+}
+
+.editProfile{
+    width: 70%;
+    padding-top: 25px;
+    background-color: rgba(18, 18, 18, 0.62);
+}
+
+.editProfile h2{
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.editProfile h6{
+    position: inherit;
+}
+
+.forms-metadata{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

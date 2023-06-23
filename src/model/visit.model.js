@@ -20,7 +20,7 @@ module.exports = class Visit {
         return (await db).collection("visits").insertOne(this);
     }
 
-    // Update Visit
+    // Get all the visits
     static async find() {
         return (await db).collection("visits").find().toArray();
     }

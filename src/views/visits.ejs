@@ -1,13 +1,48 @@
-<%- include("_header") -%>
+<!doctype html>
+<html lang="fr">
 
-<h2 style="margin-bottom: 15px;"><i style="font-size: 30px;" class="fa-solid fa-business-time"></i> Upcoming Visits</h2>
-<h6 style="font-style: italic;"><i class="fa-solid fa-van-shuttle"></i> Total: <%= model.length %></h6>
-<% var total_clients = 0 %>
-<% for(const visits of model) {
-  total_clients = total_clients + Number(visits.People)
-} %>
-<h6 style="margin-bottom: 30px; font-style: italic;"><i class="fa-solid fa-people-group"></i> Number of clients: <%= total_clients %></h6>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Puerto Madero Urubó MS</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/visits.css">
+  <!-- navbar css -->
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css">
 
+</head>
+
+<body class="d-flex flex-column min-vh-100" style="background-color: black; color: white;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 40px !important;">
+      <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
+      <ul class="navbar-nav" style="text-align: right !important;">
+        <li class="nav-item" style="display: inline-flex !important;">
+          <% if(session){ %>
+            <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
+            <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
+            <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
+            <a class="nav-link" href="/users/profile"><i class="fa-sharp fa-solid fa-user"></i> My Profile</a>
+            <a class="nav-link" href="/auth/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+          <% } else{ %>
+            <a class="nav-link" href="/auth/signup"><i class="fa-solid fa-user-plus"></i> Create a new Account</a>
+            <a class="nav-link" href="/auth/login"><i class="fa-solid fa-right-from-bracket"></i> Login</a>
+          <% } %>
+        </li>
+      </ul>
+    </nav>
+    <div class="container" style="width: 100% !important;">
+
+<div class="visits-header">
+  <h2 style="margin-bottom: 15px;"><i style="font-size: 30px;" class="fa-solid fa-business-time"></i> Upcoming Visits</h2>
+  <h6 style="font-style: italic;"><i class="fa-solid fa-van-shuttle"></i> Total: <%= model.length %></h6>
+  <% var total_clients = 0 %>
+  <% for(const visits of model) {
+    total_clients = total_clients + Number(visits.People)
+  } %>
+  <h6 style="font-style: italic;"><i class="fa-solid fa-people-group"></i> Number of clients: <%= total_clients %></h6>
+</div>
 
 <div class="table-responsive-sm" style="background-color: rgb(8,20,58) !important; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.548);">
   <table class="table table-hover" >

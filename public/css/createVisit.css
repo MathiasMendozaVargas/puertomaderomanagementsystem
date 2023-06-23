@@ -1,0 +1,31 @@
+/* *********************** */
+/* Create a Visit Page CSS */
+/* *********************** */
+
+body{
+    background-image: url('/sources/landsBg.webp');
+}
+
+.title{
+    font-size: 40px;
+    font-style: italic;
+    color: white;
+}
+
+.create-container{
+    padding: 30px 50px;
+    border-radius: 10px;
+    background-color: rgb(11, 34, 109);
+    margin-bottom: 30px;
+}
+
+.createBtn{
+    background-color: rgb(19, 48, 141) !important;
+    color: white !important;
+    margin-right: 10px !important;
+    transition: all 0.5s;
+}
+.createBtn:hover{
+    background-color: rgb(22, 54, 160) !important;
+    transform: scale(1.03);
+}

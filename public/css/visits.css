@@ -1,0 +1,12 @@
+/* Visits css page */
+body{
+    background-image: url('/sources/landsBg.webp');
+}
+
+.visits-header{
+    padding: 10px 20px;
+    border-radius: 0px 15px 0px 15px;
+    width: 100%;
+    background-color: rgba(16, 16, 16, 0.686);
+    margin-bottom: 24px;
+}

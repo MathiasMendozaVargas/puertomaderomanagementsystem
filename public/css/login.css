@@ -1,0 +1,77 @@
+/* ************** */
+/* Login Page CSS */
+/* ************** */
+
+body{
+    background-image: url('/sources/landsBg.webp');
+}
+
+.row{
+    width: 100%;
+}
+
+.container{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.login{
+    width: 100%;
+    margin: auto auto;
+    padding-top: 20px;
+}
+
+.left-side{
+    width: 40%;
+}
+
+.right-side{
+    width: 60%;
+    text-align: right;
+}
+
+.loginForm{
+    width: 70%;
+    text-align: center;
+    margin: auto auto;
+}
+
+.loginForm h2{
+    margin-bottom: 40px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.404);
+}
+
+.form-group button{
+    background-color: rgb(19, 48, 141);
+    border-color: rgb(19, 48, 141);
+}
+
+.eye-password{
+    position: absolute;
+    color: gray;
+    left: 91%;
+
+}
+
+.forgot-pass{
+    margin-top: -8px;
+    margin-bottom: 10px;
+    padding-right: 8px;
+    text-align: right;
+}
+
+
+.forgot-pass a{
+    font-size: 14px;
+    text-align: right !important;
+    color: white;
+    background-color: none !important;
+    border-color: none !important;
+}
+
+.forgot-pass a:hover{
+    color: rgb(167, 167, 167);
+    text-decoration: none;
+}
