@@ -5,10 +5,10 @@ The Puerto Madero Urubó Management System is a comprehensive web application de
 ### 📆 Schedule Visit
 The current version of the website offers a convenient "Schedule Visit" feature that allows anyone interested in the housing project to schedule a visit. Visitors can select their preferred date and time, providing them with flexibility and ensuring a smooth experience. The scheduled visits are stored and managed in a MongoDB database, enabling easy access to the details of each visit.
 
-### 🤖 Authentication and Authorization (Upcoming)
+### 🤖 Authentication and Authorization
 In the future, the website will incorporate a robust authentication system. This feature will provide secure access to different levels of users, including administrators and employees. By implementing authentication, only authorized personnel will be able to access sensitive information and perform administrative tasks.
 
-### 💻 Access Control and Database Permissions (Upcoming)
+### 💻 Access Control and Database Permissions
 The management system will grant different levels of access to the database based on user roles. Administrators will have complete control over the database, while employees will have limited access to specific functionalities. This ensures data integrity and privacy by restricting unauthorized modifications.
 
 ### 📲 Social Media Integration (Upcoming)
