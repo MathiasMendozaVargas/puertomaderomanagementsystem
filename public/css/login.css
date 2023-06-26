@@ -4,6 +4,8 @@
 
 body{
     background-image: url('/sources/landsBg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .row{

@@ -65,16 +65,16 @@
                             <select name="age" id="age" name="age">
                                 <% for(var i=0; i<100; i++){ %>
                                     <% var option = i + 1 %>
-                                    <option value="<%= option %>"><%= option %></option>
+                                    <option value="<%= option %>" <% if(Number(user.age) === option){ %> selected <% } %>><%= option %></option>
                                 <% } %>
                             </select>
 
                             <!-- gender -->
                             <h6>Gender: </h6>
                             <select name="gender" id="gender" name="gender">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Prefer not to say">Prefer not to say</option>
+                                <option value="Male" <% if(user.gender === 'Male'){ %> selected <% } %>>Male</option>
+                                <option value="Female" <% if(user.gender === 'Female'){ %> selected <% } %>>Female</option>
+                                <option value="Prefer not to say" <% if(user.gender === 'Prefer not to say'){ %> selected <% } %>>Prefer not to say</option>
                             </select>
                         </div>
 

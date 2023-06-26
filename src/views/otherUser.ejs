@@ -7,8 +7,13 @@
   <title>Puerto Madero Urubó MS</title>
   <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
-  <link rel="stylesheet" type="text/css" href="/css/calendar.css" />
   <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/profile.css" />
+
+  <!-- Toastr Alert -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
@@ -18,13 +23,12 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: rgb(29, 29, 29); color: white;">
+<body class="d-flex flex-column min-vh-100" style="background-color: white; color: white;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 40px !important;">
       <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
       <ul class="navbar-nav" style="text-align: right !important;">
         <li class="nav-item" style="display: inline-flex !important;">
           <% if(session){ %>
-            <a class="nav-link" href="/users/team"><i class="fa-solid fa-people-group"></i> Team</a>
             <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
             <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
             <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
@@ -38,50 +42,32 @@
       </ul>
     </nav>
 
-    <div id="calendar-container">
-        <div id="header">
-            <div id="monthDisplay"></div>
-            <div id="controlBtns">
-                <button id="backButton"><i class="fa-solid fa-chevron-left"></i></button>
-                <button id="nextButton"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <div class="profile">
+        <div class="profile-header">
+            <img src="/sources/basedProfile.png" alt="" />
+        </div>
+        <div class="profile-content">
+            <div class="profile-content-info">
+                <span class="profileInfoSpan">
+                    <h1><%= other_user.firstName %> <%= other_user.lastName %></h1>
+                </span>
+                <h4><span>Department:</span> <%= other_user.department %></h4>
+                <h4><span>Username:</span> @<%= other_user.username %></h4>
+                <h4><span>Age:</span> <%= other_user.age %></h4>
+                <h4><span>Gender:</span> <%= other_user.gender %></h4>
+                <h2 style="margin-bottom: 10px;">Contact Info</h2>
+                <h4 style="margin-bottom: 5px !important;"><span style="width: 100%;">Email:</span></h4>
+                <h4><%= other_user.email %></h4>
             </div>
+            <div class="profile-content-posts">
+                <h2 style="margin-top: 50px; text-align: center;"><%= other_user.firstName %> <%= other_user.lastName %> hasn't post anything!</h2>
+            </div>
+    
         </div>
-
-        <div id="weekdays">
-            <div>Sunday</div>
-            <div>Monday</div>
-            <div>Tuesday</div>
-            <div>Wednesday</div>
-            <div>Thursday</div>
-            <div>Friday</div>
-            <div>Saturday</div>
-        </div>
-
-        <div id="calendar"></div>
     </div>
-
-    <div id="newEventModal">
-        <h2>New Event</h2>
-
-        <input id="eventTitleInput" placeholder="Event Title" />
-
-        <button id="saveButton">Save</button>
-        <button id="cancelButton">Cancel</button>
-    </div>
-
-    <div id="deleteEventModal">
-        <h2>Event</h2>
-
-        <p id="eventText"></p>
-
-        <button id="deleteButton">Delete</button>
-        <button id="closeButton">Close</button>
-    </div>
-  
-    <div id="modalBackDrop"></div>
-  
-    <script src="/js/configCalendar.js"></script>
-
 
 
 <%- include("_footer") -%>
+
+

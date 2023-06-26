@@ -18,7 +18,6 @@ const User = require('../model/user.model')
 exports.getLogin = (req, res, next) => {
     const session = req.session.isLoggedIn
     if(session){
-        
         res.render('visits', {session: session})
     }else{
         res.render("login", {session: session});
@@ -29,9 +28,23 @@ exports.getLogin = (req, res, next) => {
 exports.postLogin = async (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
+    let user = null
     if(username && password){
         // Get user from db
-        const user = await User.findUserbyEmail(username)
+        let isEmail = false
+        for(var i=0; i<username.length;i++){
+            var letter = username[i]
+            if(letter==='@'){
+                isEmail = true
+            }
+        }
+        if(isEmail){
+            user = await User.findUserbyEmail(username)
+        }
+        else{
+            user = await User.findUserbyUsername(username)
+        }
+        
         if(user){
             // Uncrypt Users password and compare
             bcrypt.compare(password, user.password)

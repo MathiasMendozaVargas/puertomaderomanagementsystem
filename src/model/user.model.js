@@ -39,9 +39,33 @@ module.exports = class User {
         }
     }
 
+    // Find User by id
+    static async findUserbyId(id){
+        // find user by email
+        const user = (await db).collection('users').findOne({ _id: new ObjectId(id) })
+        if(user){
+            return user
+        }
+        else{
+            return null
+        }
+    }
+
+    // Find User by username
+    static async findUserbyUsername(username){
+        // find user by email
+        const user = (await db).collection('users').findOne({ username: username })
+        if(user){
+            return user
+        }
+        else{
+            return null
+        }
+    }
+
     // Get all the users
     static async getAllUsers(){
-        const users = (await db).collection('users').find()
+        const users = (await db).collection('users').find().toArray()
         if(users){
             return users;
         }else{
@@ -51,19 +75,19 @@ module.exports = class User {
     
 
     // Update User info
-    static async updateByEmail(department, username, email, firstName, lastName, password, age, gender) {
+    static async updateByEmail(id, username, email, firstName, lastName, age, gender) {
         const result = (await db).collection("users")
-            .updateOne({ email: email },
-                { 
-                    department: department,
-                    username: username,
-                    email: email,
-                    firstName: firstName,
-                    lastName: lastName,
-                    password: password,
-                    age: age,
-                    gender: gender
-                });
-                console.log(`Updated ${result}`);
+        .updateOne(
+            {_id: new ObjectId(id)},
+            { $set:
+                {'username' : username,
+                'email'    : email,
+                'firstName': firstName,
+                'lastName' : lastName,
+                'age'      : age,
+                'gender'   : gender
+            } });
+            console.log(`Updated ${result}`);
         };
+        
     }

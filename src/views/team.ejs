@@ -43,108 +43,57 @@
         <div class='teams'>
             <div class="team-group">
                 <h3>Sales Team</h3>
-                <h6><%= users %></h6>
                 <div class="members">
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
+                    <% for(var i=0; i<salesTeam.length; i++){ %>
+                        <div class="team-member" onclick="(e) => {
+                            e.preventDefault()
+                            window.location = '/profile/' + '<%= salesTeam[i]._id %>';
+                        }">
+                            <img src="/sources/basedProfile.png">
+                            <div class="member-info">
+                                <p><%= salesTeam[i].firstName %> <%= salesTeam[i].lastName %></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
             <div class="team-group">
                 <h3>Marketing Team</h3>
                 <div class="members">
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
+                    <% for(var i=0; i<marketingTeam.length; i++){ %>
+                        <div class="team-member">
+                            <img src="/sources/basedProfile.png">
+                            <div class="member-info">
+                                <p><%= marketingTeam[i].firstName %> <%= marketingTeam[i].lastName %></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
             <div class="team-group">
                 <h3>Accounting Team</h3>
                 <div class="members">
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
+                    <% for(var i=0; i<accountingTeam.length; i++){ %>
+                        <div class="team-member">
+                            <img src="/sources/basedProfile.png">
+                            <div class="member-info">
+                                <p><%= accountingTeam[i].firstName %> <%= accountingTeam[i].lastName %></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
+                    <% } %>
+                </div>
+            </div>
+            <div class="team-group">
+                <h3>Administration Team</h3>
+                <div class="members">
+                    <% for(var i=0; i<adminTeam.length; i++){ %>
+                        <div class="team-member">
+                            <img src="/sources/basedProfile.png">
+                            <div class="member-info">
+                                <p><%= adminTeam[i].firstName %> <%= adminTeam[i].lastName %></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="/sources/basedProfile.png">
-                        <div class="member-info">
-                            <p>Cecilia Vargas</p>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>

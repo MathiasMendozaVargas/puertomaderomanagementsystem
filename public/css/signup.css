@@ -1,6 +1,8 @@
 /* Sign up Css */
 body{
     background-image: url('/sources/landsBg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .signup{
