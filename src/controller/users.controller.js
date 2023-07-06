@@ -7,6 +7,7 @@ const Visit = require("../model/visit.model");
 const User = require('../model/user.model')
 const Toastify = require('toastify-js');
 const { response } = require("express");
+const { ObjectId } = require("mongodb");
 
 
 /////////////
@@ -78,6 +79,7 @@ exports.postEditProfile = async (req, res) => {
 // (GET) Get Team Page
 exports.getTeam = async (req, res) => {
     const session = req.session.isLoggedIn
+    const user_id = req.session.current_user._id
     if(session){
         try {
           const team = await User.getAllUsers()
@@ -103,7 +105,7 @@ exports.getTeam = async (req, res) => {
             console.log(marketingTeam);
             console.log(accountingTeam);
             console.log(adminTeam);
-            res.render('team', {session: session, salesTeam: salesTeam, marketingTeam: marketingTeam, accountingTeam: accountingTeam, adminTeam: adminTeam})
+            res.render('team', {session: session, salesTeam: salesTeam, marketingTeam: marketingTeam, accountingTeam: accountingTeam, adminTeam: adminTeam, user_id: user_id})
           }
           else{
             console.log("Couldnt find Users");
