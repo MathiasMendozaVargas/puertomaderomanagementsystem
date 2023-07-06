@@ -10,14 +10,19 @@
   <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
   <link rel="stylesheet" type="text/css" href="/css/editProfile.css" />
   <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
+
+  <!-- Data Aos Effect for Calendar -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100" style="color: white;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 40px !important;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 47px !important;">
         <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
         <ul class="navbar-nav" style="text-align: right !important;">
             <li class="nav-item" style="display: inline-flex !important;">
             <% if(session){ %>
+                <a class="nav-link" href="/posts/createGeneralPost"><i class="fa-solid fa-images"></i> Posts</a>
                 <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
                 <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
                 <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
@@ -34,11 +39,12 @@
 
 <!-- Edit Profile Page -->
 
-    <div class="editProfile" style=" margin: auto auto !important;">
+    <div class="editProfile" style=" margin: auto auto !important;" data-aos="fade-up">
         <div class="container">
             <div class="row">
-                <Form class="signUpForm" action="/users/editProfile" method="post" style="width: 70% !important; text-align: center; margin: auto auto !important;">
-                    <div class="col-md-12 col-md-offset-12">
+                <a href="/users/profile" class="go-back"><i class="fa-solid fa-arrow-left"></i></a>
+                <Form class="signUpForm" action="/users/editProfile" method="post" style="width: 70% !important; text-align: center; margin: auto auto;">
+                    <div class="col-md-12 col-md-offset-12 ">
                         <h2>Update your Information</h2>
                         <!-- username -->
                         <div class="form-group">

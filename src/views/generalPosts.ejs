@@ -6,24 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Puerto Madero Urubó MS</title>
   <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/css/main.css" />
-  <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
-  <link rel="stylesheet" type="text/css" href="/css/profile.css" />
-
-  <!-- Toastr Alert -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
-
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/team.css"/>
+  <!-- navbar css -->
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css">
 
   <!-- Data Aos Effect for Calendar -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  
+
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: white; color: white;">
+<body class="d-flex flex-column min-vh-100" style="background-color: black; color: white;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 40px !important;">
       <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
       <ul class="navbar-nav" style="text-align: right !important;">
@@ -34,6 +31,7 @@
             <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
             <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
             <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
+            <a class="nav-link" href="/users/profile"><i class="fa-sharp fa-solid fa-user"></i> My Profile</a>
             <a class="nav-link" href="/auth/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
           <% } else{ %>
             <a class="nav-link" href="/auth/signup"><i class="fa-solid fa-user-plus"></i> Create a new Account</a>
@@ -42,40 +40,10 @@
         </li>
       </ul>
     </nav>
-
-
-    <div class="profile">
-        <div class="profile-header">
-            <img src="/sources/basedProfile.png" alt="" />
-        </div>
-        <div class="profile-content">
-            <div class="profile-content-info">
-                <span class="profileInfoSpan">
-                    <h1><%= user.firstName %> <%= user.lastName %></h1>
-                    <a href="/users/editProfile"><i class="fa-solid fa-pen"></i></a>
-                </span>
-                <h4><span>Department:</span> <%= user.department %></h4>
-                <h4><span>Username:</span> @<%= user.username %></h4>
-                <h4><span>Age:</span> <%= user.age %></h4>
-                <h4><span>Gender:</span> <%= user.gender %></h4>
-                <h2 style="margin-bottom: 10px;">Contact Info</h2>
-                <h4 style="margin-bottom: 5px !important;"><span style="width: 100%;">Email:</span></h4>
-                <h4><%= user.email %></h4>
-            </div>
-            <div class="profile-content-posts">
-                <h2 style="margin-top: 50px; text-align: center;"><%= user.firstName %> <%= user.lastName %> hasn't post anything!</h2>
-            </div>
-    
+    <div class="container" style="width: 100% !important;">
+        <div class="generalPosts">
+            <h1>General Posts</h1>
         </div>
     </div>
 
-
 <%- include("_footer") -%>
-
-
-
-
-
-
-
-

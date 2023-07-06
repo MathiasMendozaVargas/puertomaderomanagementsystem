@@ -12,6 +12,12 @@
   <!-- navbar css -->
   <link rel="stylesheet" type="text/css" href="/css/navbar.css">
 
+  <!-- Data Aos Effect for Calendar -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  
+
 </head>
 
 <body class="d-flex flex-column min-vh-100" style="background-color: black; color: white;">
@@ -20,6 +26,7 @@
       <ul class="navbar-nav" style="text-align: right !important;">
         <li class="nav-item" style="display: inline-flex !important;">
           <% if(session){ %>
+            <a class="nav-link" href="/posts/createGeneralPost"><i class="fa-solid fa-images"></i> Posts</a>
             <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
             <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
             <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
@@ -33,66 +40,75 @@
       </ul>
     </nav>
     <div class="container" style="width: 100% !important;">
-        <div class="team-header">
-            <h1>Our current Team</h1>
-        </div>
-        <br/>
         <!---------------------------------------------------------------------->
         <!-- PAGE ON PRODUCTION, ADDING FUNCTIONALITY AND GIVING FINAL STYLES -->
         <!---------------------------------------------------------------------->
         <div class='teams'>
             <div class="team-group">
-                <h3>Sales Team</h3>
+                <h2 data-aos="fade-right">Sales Team</h2>
                 <div class="members">
                     <% for(var i=0; i<salesTeam.length; i++){ %>
-                        <div class="team-member" onclick="(e) => {
-                            e.preventDefault()
-                            window.location = '/profile/' + '<%= salesTeam[i]._id %>';
-                        }">
+                        <a data-aos="zoom-in" class="team-member" <% if(salesTeam[i]._id.toString() === user_id.toString()){ %>
+                            href="/users/profile"
+                        <%} else{ %>
+                            href="/users/profile/<%= salesTeam[i]._id %>"
+                        <% } %>>
                             <img src="/sources/basedProfile.png">
                             <div class="member-info">
                                 <p><%= salesTeam[i].firstName %> <%= salesTeam[i].lastName %></p>
                             </div>
-                        </div>
+                        </a>
                     <% } %>
                 </div>
             </div>
             <div class="team-group">
-                <h3>Marketing Team</h3>
+                <h2 data-aos="fade-left">Marketing Team</h2>
                 <div class="members">
                     <% for(var i=0; i<marketingTeam.length; i++){ %>
-                        <div class="team-member">
+                        <a data-aos="zoom-in" class="team-member" <% if(marketingTeam[i]._id.toString() === user_id.toString()){ %>
+                            href="/users/profile"
+                        <%} else{ %>
+                            href="/users/profile/<%= marketingTeam[i]._id %>"
+                        <% } %>>
                             <img src="/sources/basedProfile.png">
                             <div class="member-info">
                                 <p><%= marketingTeam[i].firstName %> <%= marketingTeam[i].lastName %></p>
                             </div>
-                        </div>
+                        </a>
                     <% } %>
                 </div>
             </div>
             <div class="team-group">
-                <h3>Accounting Team</h3>
+                <h2 data-aos="fade-right">Accounting Team</h2>
                 <div class="members">
                     <% for(var i=0; i<accountingTeam.length; i++){ %>
-                        <div class="team-member">
+                        <a data-aos="zoom-in" class="team-member" <% if(accountingTeam[i]._id.toString() === user_id.toString()){ %>
+                            href="/users/profile"
+                        <%} else{ %>
+                            href="/users/profile/<%= accountingTeam[i]._id %>"
+                        <% } %>>
                             <img src="/sources/basedProfile.png">
                             <div class="member-info">
                                 <p><%= accountingTeam[i].firstName %> <%= accountingTeam[i].lastName %></p>
                             </div>
-                        </div>
+                        </a>
                     <% } %>
                 </div>
             </div>
             <div class="team-group">
-                <h3>Administration Team</h3>
+                <h2 data-aos="fade-left">Administration Team</h2>
                 <div class="members">
                     <% for(var i=0; i<adminTeam.length; i++){ %>
-                        <div class="team-member">
+                        <a data-aos="zoom-in" class="team-member" <% if(adminTeam[i]._id.toString() === user_id.toString()){ %>
+                            href="/users/profile"
+                        <%} else{ %>
+                            href="/users/profile/<%= adminTeam[i]._id %>"
+                        <% } %>>
                             <img src="/sources/basedProfile.png">
                             <div class="member-info">
                                 <p><%= adminTeam[i].firstName %> <%= adminTeam[i].lastName %></p>
                             </div>
-                        </div>
+                        </a>
                     <% } %>
                 </div>
             </div>

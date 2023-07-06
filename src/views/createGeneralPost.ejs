@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Puerto Madero Urubó MS</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/createPost.css" />
+  <script src="https://kit.fontawesome.com/919c0a277c.js" crossorigin="anonymous"></script>
+
+  <!-- Data Aos Effect for Calendar -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+</head>
+
+<body class="d-flex flex-column min-vh-100" style="color: white;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="background-color: rgb(11, 34, 109) !important; height: 80px !important; margin-bottom: 47px !important;">
+        <a style="font-size: 23px; font-style: italic; font-weight: 600;" class="navbar-brand" href="/"><i class="fa-solid fa-anchor"></i> Puerto Madero Urubó MS</a>
+        <ul class="navbar-nav" style="text-align: right !important;">
+            <li class="nav-item" style="display: inline-flex !important;">
+            <% if(session){ %>
+                <a class="nav-link" href="/visits/calendar"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
+                <a class="nav-link" href="/visits/all"><i class="fa-solid fa-calendar-days"></i> Upcoming Visits</a>
+                <a class="nav-link" href="/visits/create"><i class="fa-solid fa-van-shuttle"></i> Schedule Visit</a>
+                <a class="nav-link" href="/users/profile"><i class="fa-sharp fa-solid fa-user"></i> My Profile</a>
+                <a class="nav-link" href="/auth/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            <% } else{ %>
+                <a class="nav-link" href="/auth/signup"><i class="fa-solid fa-user-plus"></i> Create a new Account</a>
+                <a class="nav-link" href="/auth/login"><i class="fa-solid fa-right-from-bracket"></i> Login</a>
+            <% } %>
+            </li>
+        </ul>
+    </nav>
+    <div class="container" style="width: 100% !important;">
+<!-- Edit Profile Page -->
+
+    <div class="create-post" style=" margin: auto auto !important;" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <a href="/visits/calendar" class="go-back"><i class="fa-solid fa-arrow-left"></i></a>
+                <Form class="createPostForm" action="/users/editProfile" method="post" style="width: 100% !important; text-align: center; margin: auto auto;">
+                    <div class="col-md-12 col-md-offset-12 ">
+                        <h2>Create a General Post <i class="fa-solid fa-house-tree"></i></h2>
+                        <!-- Text -->
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" placeholder="Text" id="text" name="text" required></textarea>
+                        </div>
+                        <!-- Title -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Title" id="title" name="title" required>
+                        </div>
+
+                        <!-- image input -->
+                        <div id="img-preview"></div>
+                        <div class="form-group">
+                            <label class="image-input-label" for="image-input">Select Image <i class="fa-solid fa-image"></i></label>
+                            <input id="image-input" type="file" name="image-input" accept="image/png, image/gif, image/jpeg" required/>
+                        </div>
+                        <script src="/js/previewImage.js"></script>
+                        
+                        <div class="form-group" style="margin-bottom: 40px;">
+                            <a class="btn btn-primary btn-block" id="createPostBtn">Update Profile</a>
+                        </div>
+                    </div>
+                </Form>
+            </div>
+        </div>
+    </div>
+
+    <%- include("_footer") -%>
