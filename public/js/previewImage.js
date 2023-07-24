@@ -1,4 +1,4 @@
-const chooseFile = document.getElementById('image-input');
+const chooseFile = document.getElementById('image');
 const imgPreview = document.getElementById("img-preview");
 
 function getImgData() {

@@ -1,12 +1,37 @@
 /* Edit Profile Css */
 body{
     background-image: url('/sources/landsBg.webp');
+    padding-bottom: 40px;
 }
 
 .editProfile{
-    width: 70%;
-    padding-top: 25px;
-    background-color: rgba(18, 18, 18, 0.62);
+    width: 65%;
+    border-radius: 15px;
+    background-color: rgba(18, 18, 18, 0.793);
+    
+}
+
+.go-back{
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none!important;
+    cursor: pointer;
+    padding: 17px;
+    background-color: rgb(19, 48, 141) !important;
+    border-color: rgb(19, 48, 141) !important;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.go-back:hover{
+    background-color: rgb(22, 54, 159) !important;
+    color: white;
+}
+
+.signUpForm{
+    padding-top: 40px;
+    padding-right: 20px;
 }
 
 .editProfile h2{

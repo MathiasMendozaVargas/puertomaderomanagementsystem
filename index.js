@@ -8,8 +8,6 @@ const MongoDBStore = require('connect-mongodb-session')(session)
 const morgan = require('morgan')
 const methodOverride = require('method-override')
 const path = require('path')
-const bcrypt = require('bcrypt')
-
 
 
 const { srcDir, rootDir } = require('./src/utils/path-helper')
@@ -17,10 +15,13 @@ const PORT = 3000
 
 
 const app = express()
+//...
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan('dev'))
 app.use(methodOverride('_method'))
+
+
 
 // Creating a db store
 const store = new MongoDBStore({
@@ -46,6 +47,7 @@ app.use(session({
 const authRouter = require('./src/routers/auth.router')
 const visitsRouter = require('./src/routers/visits.router')
 const usersRouter = require('./src/routers/users.router')
+const posts_router = require('./src/routers/posts.router')
 
 // Index Route
 app.get('/', (req, res) => {
@@ -66,6 +68,54 @@ app.use('/visits', visitsRouter)
 // Implement Users Router
 app.use('/users', usersRouter)
 
+// Implement Posts Router
+app.use('/posts', posts_router)
+
+
+/// Post upload special routes ///
+
+// importing multer
+const multer = require("multer");
+const fs = require('fs')
+
+// importing General Post model
+const GeneralPost = require('./src/model/generalpost.model')
+
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname))
+    }
+});
+ 
+var upload = multer({ storage: storage });
+
+app.post('/posts/createGeneralPost', upload.single('image'), (req, res, next) => {
+    if(req.session.isLoggedIn){
+        const user = req.session.current_user
+        const user_id = user._id
+        const { text, title } = req.body;
+        console.log(req.files);
+        var img = fs.readFileSync(req.files.image);
+        var encode_img = img.toString('base64');
+        var final_img = {
+            contentType: req.file.mimetype,
+            image: new Buffer(encode_img).toString('base64')
+        };
+
+        const newGeneralPost = new GeneralPost(user_id, text, final_img, title, 0, 0);
+        newGeneralPost
+            .save()
+            .then(() => {
+            res.redirect("/visits/all");
+            })
+            .catch((err) => console.error(err.message));
+    }else{
+        res.redirect('/auth/login')
+    }
+})
 
 // catch route middlewares
 app.use((req, res, next) => {

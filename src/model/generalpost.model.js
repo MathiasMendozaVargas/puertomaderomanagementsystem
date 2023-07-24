@@ -10,11 +10,8 @@ const db = mongoConnect()
 
 // User Model
 module.exports = class GeneralPost {
-    constructor(user_id, first_name, last_name, department, text, image, title, nLikes=[], numComments=[]){
+    constructor(user_id, text, image={data: Buffer, contentType: String}, title, nLikes=[], numComments=[]){
         this.user_id = user_id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.department = department;
         this.text = text;
         this.image = image;
         this.title = title;

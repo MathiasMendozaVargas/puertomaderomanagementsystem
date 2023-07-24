@@ -11,6 +11,6 @@ const {
 } = require('../controller/posts.controller');
 
 posts_router.get('/general', getAllGeneralPosts)
-posts_router.route('/createGeneralPost').get(getCreateGeneralPost).post(postCreateGeneralPost)
+posts_router.get('/createGeneralPost', getCreateGeneralPost)
 
 module.exports = posts_router;

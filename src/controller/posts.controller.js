@@ -6,6 +6,9 @@ const session = require("express-session");
 const User = require('../model/user.model')
 const GeneralPost = require('../model/generalpost.model')
 
+// importing modules
+const fs = require('fs')
+const path = require('path')
 
 //////////////
 // Functions
@@ -39,24 +42,3 @@ exports.getCreateGeneralPost = (req, res) => {
   }
 };
 
-// (POST) Creating New General Post
-exports.postCreateGeneralPost = (req, res) => {
-  if(req.session.isLoggedIn){
-    const user = req.session.current_user
-    const user_id = user._id
-    const firstName = user.firstName
-    const lastName = user.lastName
-    const department = user.department
-    const { text, image, title } = req.body;
-
-    const newGeneralPost = new GeneralPost(user_id, firstName, lastName, department, text, image, title, 0, 0);
-    newGeneralPost
-      .save()
-      .then(() => {
-        res.redirect("/posts/general");
-      })
-      .catch((err) => console.error(err.message));
-  }else{
-    res.redirect('/auth/login')
-  }
-};
